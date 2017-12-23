@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "run-script": "node src/js/data.js",
     "build": "webpack",
     "watch": "yarn build -- --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -17,6 +18,8 @@
   },
   "dependencies": {
     "archieml": "^0.4.2",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
     "dotenv": "^4.0.0",
     "googledoc-to-json": "^0.4.1",
     "json-loader": "^0.5.7",

@@ -14,6 +14,12 @@ gDocToJSON.getArchieML(options, function (err, aml) {
     console.log('Google doc to JSON ' + err);
     return;
   }
+
+	// create an html file in the directory
+  // var fileName = options.output;
+	// var stream = fs.createWriteStream(fileName);
+
+  //write archie data to file + console log success
   fs.writeFile(options.output, JSON.stringify(aml, null, '\t'))
   console.log('Google Doc Success: ' + options.fileId + ' written to ' + options.output)
 });
