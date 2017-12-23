@@ -1,10 +1,10 @@
 const GoogleDocToJSON = require('googledoc-to-json');
 const fs = require('fs');
-const config = require('../configs/config.json').google; // see 'Getting Credentials' below
+const config = require('../configs/config.json').google;
 const gDocToJSON = new GoogleDocToJSON(config);
 
 const options = {
-    fileId: '1va9y9OxcShd9rK8dKXLJFnKwUfaQuK6B9FQ2jt7yfTw',
+    fileId: config.fileId,
     oAuthTokens: config.oAuthTokens,
     output: './src/data/archie.json'
 };
