@@ -10,6 +10,7 @@ var copy = require('json-loader!../data/archie.json');
 // var upcomingEventsPanelTemplate = require("./../templates/partials/events-list-small.hbs");
 // var eventsListFullTemplate = require("./../templates/partials/events-list-full.hbs");
 // var lightningTalksTemplate = require("./../templates/partials/lightning-talks-archive.hbs");
+var storyWindowTemplate = require("./../templates/partials/event-window.hbs");
 
 // Set up global variables
 // var moment = require('moment');
@@ -30,3 +31,18 @@ function onLoad(data, tabletop) {
 function updateDOM() {
     eventsListFullDOM.innerHTML = eventsListFullTemplate(copy.events);
 }
+
+
+// helper function to loop through stories in archie.json and generate 'windows'
+// used by event-window partial
+// not sure if this is the right place for it??
+// actually not even sure if necessary
+Handlebars.registerHelper('each', function(context, options) {
+  var ret = "";
+
+  for(var i=0, j=context.length; i<j; i++) {
+    ret = ret + options.fn(context[i]);
+  }
+
+  return ret;
+});
