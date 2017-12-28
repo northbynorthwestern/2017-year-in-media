@@ -1,5 +1,5 @@
 var Handlebars = require("handlebars");
-var copy = require('json-loader!../data/archie.json');
+var copy = require('../data/archie.json');
 
 // Set up DOM Elements--FROM OL SITE INDEX. use as a template for loading hbs templates
 // var upcomingEventsPanelDOM = document.querySelector('#upcoming-events-panel');
@@ -18,8 +18,31 @@ var storyWindowTemplate = require("./../templates/partials/event-window.hbs");
 // var copy = null;
 // var staticCopy = require('json-loader!../data/static-copy.json');
 
+
+
 var source = document.getElementById("entry-template").innerHTML;
+// jQuery version: var source = $("#some-template").html();
+
 var template = Handlebars.compile(source);
+
+//////////////
+//registers handlebars partials -- FROM OL SITE
+
+var globby = require('globby'),
+    fs = require('fs-extra');
+var getPartial = function(Handlebars, rootPath) {
+  globby.sync(rootPath + '*.hbs').forEach(function(file) {
+    var partialName = file.replace(rootPath, "").replace(".hbs", "");
+    Handlebars.registerPartial(partialName, fs.readFileSync(file, "utf8"));
+  })
+}
+module.exports = {
+  getPartial: getPartial
+}
+
+// runs this function
+getPartial(Handlebars, './../templates/partials/');
+//////////////
 
 function onLoad(data, tabletop) {
     copy = data;
@@ -32,17 +55,4 @@ function updateDOM() {
     eventsListFullDOM.innerHTML = eventsListFullTemplate(copy.events);
 }
 
-
-// helper function to loop through stories in archie.json and generate 'windows'
-// used by event-window partial
-// not sure if this is the right place for it??
-// actually not even sure if necessary
-Handlebars.registerHelper('each', function(context, options) {
-  var ret = "";
-
-  for(var i=0, j=context.length; i<j; i++) {
-    ret = ret + options.fn(context[i]);
-  }
-
-  return ret;
-});
+$('body').append(template(data)); //jQuery
