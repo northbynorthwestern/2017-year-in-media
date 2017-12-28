@@ -23,6 +23,8 @@
     "dotenv": "^4.0.0",
     "googledoc-to-json": "^0.4.1",
     "json-loader": "^0.5.7",
-    "node": "^9.3.0"
+    "mkdirp": "^0.5.1",
+    "node": "^9.3.0",
+    "prettify-html": "^0.0.2"
   }
 }
