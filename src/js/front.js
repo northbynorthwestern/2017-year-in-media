@@ -60,8 +60,8 @@ function generateBody(){
       story: stories[x]['story'],
       link: 'http://apps.northbynorthwestern.com/year-in-media/2017/' + stories[x]['slug'] + '/index.html',
       index: x+1,
-      marginLeft: Math.random()*900,
-      marginTop: Math.random()*900
+      marginLeft: Math.random()*700,
+      marginTop: Math.random()*500
     }
     var storywindow = storytemp(context);
     var storywin = prettifyHtml(storywindow);

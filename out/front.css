@@ -27,7 +27,7 @@ body {
 
 header {
 	padding: 0.5em;
-	height: 2.25em;
+	height: 3.2em;
   /*background-color: #37235E;*/
 	background-color: rgba(0, 0, 0, .5);
 	display: block;
@@ -38,6 +38,10 @@ header {
 
 #logo {
 	width: 2.25em;
+}
+
+#center-window {
+  align-items: center;
 }
 
 .window {
