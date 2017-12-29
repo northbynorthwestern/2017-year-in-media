@@ -6,6 +6,7 @@
   "scripts": {
     "run-script": "node src/js/data.js",
     "build": "webpack",
+    "pack": "node src/js/front.js && node src/js/main.js",
     "watch": "yarn build -- --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

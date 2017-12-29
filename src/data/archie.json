@@ -1,13 +1,6 @@
 {
 	"stories": [
 		{
-			"hed": "FILL IN ARTICLE TITLE",
-			"author": "FILL IN AUTHOR",
-			"slug": "article descriptor 1-2 words no spaces",
-			"lead": "PARAGRAPH ONE OF ARTICLE",
-			"story": "REST OF STORY, NOT INCLUDING PARAGRAPH ONE"
-		},
-		{
 			"hed": "#MeToo",
 			"slug": "me-too",
 			"author": "Audrey Valbuena",
