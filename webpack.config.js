@@ -3,7 +3,7 @@ const path = require("path");
 
 module.exports = {
   context: __dirname,
-  entry: `${__dirname}/src/js/index.js`,
+  entry: `${__dirname}/src/js/front.js`,
   output: {
     filename: "bundle.js",
     path: path.join(__dirname, "dist")
@@ -30,5 +30,8 @@ module.exports = {
         use: "json-loader"
       }
     ]
-  }
+  },
+  plugins: [
+    new style()
+  ]
 }

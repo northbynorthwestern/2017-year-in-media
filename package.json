@@ -6,6 +6,7 @@
   "scripts": {
     "run-script": "node src/js/data.js",
     "build": "webpack",
+    "pack": "node src/js/front.js && node src/js/main.js",
     "watch": "yarn build -- --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -23,6 +24,8 @@
     "dotenv": "^4.0.0",
     "googledoc-to-json": "^0.4.1",
     "json-loader": "^0.5.7",
-    "node": "^9.3.0"
+    "mkdirp": "^0.5.1",
+    "node": "^9.3.0",
+    "prettify-html": "^0.0.2"
   }
 }
