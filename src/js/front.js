@@ -47,6 +47,7 @@ function generateBody(){
 
   var stories = copy.stories
 
+  // would love to make the left and top margins relative to the size of the window
   // var h = $(window).height();
   // var w = $(window).width();
 
@@ -62,12 +63,9 @@ function generateBody(){
       marginLeft: Math.random()*900,
       marginTop: Math.random()*900
     }
-
-		// var storywindow = prettifyHtml(storytemp(context));
     var storywindow = storytemp(context);
     var storywin = prettifyHtml(storywindow);
 		stream.write(storywin);
-		// stream.end();
   }
   stream.end();
 }
