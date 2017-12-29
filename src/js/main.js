@@ -38,10 +38,9 @@ function generateArticles(){
 	    "<link rel='stylesheet' href='style.css'>"+
 			"<style>"+
 				"article header.article-meta {"+
-						"background-color: #A5A69D;"+
-						"background-repeat: no-repeat;"+
-						"background-position: 30% 0;"+
-						"height: 100%;"+
+            "background: -webkit-radial-gradient(green 1px, white 1px);"+
+            "background-position: 0 0, 80px 80px;"+
+            "background-size: 3px 3px;"+
 						"height: 300px;"+
 						"color: white;"+
 						"text-shadow: 0 0 10px black;"+
