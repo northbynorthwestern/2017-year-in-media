@@ -3,6 +3,7 @@ var copy = require('../data/archie.json');
 var fs = require('fs');
 var mkdirp = require('mkdirp');
 var prettifyHtml = require('prettify-html');
+// var $ = require("jquery");
 
 /*
 Load Handlebars partials
@@ -14,23 +15,21 @@ var entryTemplateDOM = document.querySelector("entry-template")
 
 // Load scripts for webpack bundle
 var main = require('./main.js');
-var style = require('./style.js')
+// var style = require('./style.js')
 
 function generateBody(){
   var storyWindowTemplate =
-    // '{{#each sections}}'+
-      '<div class="window" id="{{index}}" style="position: absolute; left: {{xyPos}}, top: {{xyPos}}">'+
-        '<div class="title-bar">'+
-          '<div class="close-button"></div>'+
-          '<div class="title-bar-name"><a href="{{link}}">{{hed}}</a></div>'+
-        '</div>'+
-        '<div class="window-content">'+
-          '<p id="article-deck">{{lead}}</p>'+
-          '<p id="article-auth">By {{author}}</p>'+
-          '<p id="article-link"><a href={{link}}>Go >></a></p>'+
-        '</div>'+
+    '<div class="window" id="{{index}}" style="margin-left: {{marginLeft}}px; margin-top: {{marginTop}}px">'+
+      '<div class="title-bar">'+
+        '<div class="close-button"></div>'+
+        '<div class="title-bar-name"><a href="{{link}}">{{{hed}}}</a></div>'+
       '</div>'+
-    // '{{/sections}}'
+      '<div class="window-content">'+
+        '<p id="article-deck">{{{lead}}}</p>'+
+        '<p id="article-auth">By {{author}}</p>'+
+        '<p id="article-link"><a href={{link}}>Go >></a></p>'+
+      '</div>'+
+    '</div>'
 
   console.log("yo")
   var stories = copy.stories;
@@ -48,6 +47,9 @@ function generateBody(){
 
   var stories = copy.stories
 
+  // var h = $(window).height();
+  // var w = $(window).width();
+
   for (var x = 0; x < stories.length; ++x) {
     var context = {
       hed: stories[x]['hed'],
@@ -57,7 +59,8 @@ function generateBody(){
       story: stories[x]['story'],
       link: 'http://apps.northbynorthwestern.com/year-in-media/2017/' + stories[x]['slug'],
       index: x+1,
-      xyPos: (x+1)*50
+      marginLeft: Math.random()*1000,
+      marginTop: Math.random()*1000
     }
 
 		// var storywindow = prettifyHtml(storytemp(context));
