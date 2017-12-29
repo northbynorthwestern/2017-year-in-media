@@ -19,7 +19,7 @@ var main = require('./main.js');
 
 function generateBody(){
   var storyWindowTemplate =
-    '<div class="window" id="{{index}}" style="margin-left: {{marginLeft}}px; margin-top: {{marginTop}}px">'+
+    '<div class="window" draggable="true" id="{{index}}" style="margin-left: {{marginLeft}}px; margin-top: {{marginTop}}px">'+
       '<div class="title-bar">'+
         '<div class="close-button"></div>'+
         '<div class="title-bar-name"><a href="{{link}}">{{{hed}}}</a></div>'+
@@ -42,7 +42,7 @@ function generateBody(){
       else console.log('pow!')
   });
   const fileName = './out/index.html';
-  var options = { flags: 'r+', start: 4000 }
+  var options = { flags: 'r+', start: 5000 }
   var stream = fs.createWriteStream(fileName, options);
 
   var stories = copy.stories
@@ -57,10 +57,10 @@ function generateBody(){
       author: stories[x]['author'],
       lead: stories[x]['lead'],
       story: stories[x]['story'],
-      link: 'http://apps.northbynorthwestern.com/year-in-media/2017/' + stories[x]['slug'],
+      link: 'http://apps.northbynorthwestern.com/year-in-media/2017/' + stories[x]['slug'] + '/index.html',
       index: x+1,
-      marginLeft: Math.random()*1000,
-      marginTop: Math.random()*1000
+      marginLeft: Math.random()*900,
+      marginTop: Math.random()*900
     }
 
 		// var storywindow = prettifyHtml(storytemp(context));
