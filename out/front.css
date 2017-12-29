@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Space+Mono');
+
 :root {
   --black: #222;
   --green: green;
@@ -14,18 +16,17 @@ body {
   font-family: 'Space Mono', monospace;
   height: 100vh;
   width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  /*justify-content: center;
+  align-items: center;*/
 
   background: -webkit-radial-gradient(var(--green) 1px, var(--white) 1px);
   background-position: 0 0, 80px 80px;
   background-size: 3px 3px;
 }
 .window {
-  /*position: absolute;
+  /*position: absolute;*/
   width: var(--window-width);
-  height: var(--window-height);*/
+  height: var(--window-height);
   border: solid var(--border-width) var(--black);
   border-radius: 3px;
   background-color: var(--white);

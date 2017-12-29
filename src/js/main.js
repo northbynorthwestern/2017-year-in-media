@@ -1,5 +1,5 @@
-var Tabletop = require('tabletop');
 var Handlebars = require('handlebars');
+var copy = require('../data/archie.json');
 var fs = require('fs');
 var mkdirp = require('mkdirp');
 var prettifyHtml = require('prettify-html');
@@ -34,20 +34,18 @@ function generateArticles(){
 	    "<title>{{title}} | North by Northwestern Year in Media 2017</title>"+
 
 	   	"<link rel=stylesheet href='http://apps.northbynorthwestern.com/hungry/styles/22738433.main.css'>"+
-	    "<link rel='stylesheet' href='../../universal.css'>"+
+	    "<link rel='stylesheet' href='../universal.css'>"+
 	    "<link rel='stylesheet' href='style.css'>"+
 			"<style>"+
 				"article header.article-meta {"+
 						"background-color: #A5A69D;"+
-						"background-image: url({{media_link}});"+
-						"background-size: cover;"+
 						"background-repeat: no-repeat;"+
 						"background-position: 30% 0;"+
 						"height: 100%;"+
-						"min-height: 1000px;"+
+						"height: 300px;"+
 						"color: white;"+
 						"text-shadow: 0 0 10px black;"+
-						"padding-top: 650px;"+
+						"padding-top: 50px;"+
 				"}"+
 			"</style>"+
 	"</head>"+
@@ -63,14 +61,13 @@ function generateArticles(){
             "<header class='article-meta'>"+
                 "<div class='headline'>"+
                     "<h1 class='hed'>{{hed}}</h1>"+
-                		"<h3 class='byline'><a href='{{byline_url}}' target='_blank'>{{author}}</h3>"+
+                		"<h3 class='byline'>By <a href='{{byline_url}}' target='_blank'>{{author}}</h3>"+
                 "</div>"+
-                "<p class='photo-byline byline'>Image by <a href='{{media_author_url}}' target='_blank'><b>{{media_byline}}</b></a> / North by Northwestern</p>"+
             "</header>"+
 
             "<div class='blackboard'>"+
-                "<p class='lead'>{{article_lead}}</p>"+
-                "<div class='articlebody'>{{article_body}}</div>"+
+                "<p class='lead'>{{lead}}</p>"+
+                "<div class='articlebody'>{{story}}</div>"+
             "</div>"+
         "</article>"+
 				"</main>"+
@@ -104,82 +101,24 @@ function generateArticles(){
       story: stories[x]['story'],
       link: 'http://apps.northbynorthwestern.com/year-in-media/2017/' + stories[x]['slug'],
       index: x+1,
-    }  
-
+    }
     //create the directory if not already created
-    var dir = './dist/'+context.slug;
+    var dir = './out/'+context.slug;
     mkdirp.sync(dir, function (err) {
       if (err) console.error(err)
       else console.log('pow!')
-    });
+    })
 
     //create an html file in the directory
-    var fileName = './dist/'+context.slug+'/index.html';
+    var fileName = './out/'+context.slug+'/index.html';
     var stream = fs.createWriteStream(fileName);
-    if (context.media_type == 'photo'){
-      var imgResult = imgTemplate(context);
-      var prettifiedImgResult = prettifyHtml(imgResult);
-      stream.write(prettifiedImgResult);
-      stream.end();
-    }
-    \\
+
+    var articleResult = storytemp(context);
+    var prettifiedResult = prettifyHtml(articleResult);
+
+    stream.write(prettifiedResult);
   }
+    stream.end();
+}
 
-  function onLoad(data, tabletop) {
-    copy = data;
-    stories = copy.BUDGET.elements;
-    // formatted = [];
-    var imgTemplate = Handlebars.compile(imgHtml);
-    var vidTemplate = Handlebars.compile(vidHtml);
-
-    for (var x = 0; x < stories.length; ++x) {
-      var context = {
-        section: stories[x]['SECTION'],
-        slug: stories[x]['STORY-SLUG'],
-        title: stories[x]['HED'],
-        subtitle: stories[x]['DEK'],
-        byline: stories[x]['BYLINE'],
-        byline_url: stories[x]['AUTHOR-LINK'],
-        media_type: stories[x]['TOP-GRAPHIC-TYPE'],
-        media_link: stories[x]['MEDIA-LINK'],
-        media_byline: stories[x]['MEDIA-BYLINE'],
-        media_author_url: stories[x]['MEDIA-AUTHOR-LINK'],
-        front_preview: stories[x]['FRONT-PREVIEW'],
-        article_lead: stories[x]['ARTICLE-LEAD'],
-        article_body: stories[x]['ARTICLE-BODY'],
-
-        related_left_link: stories[x]['RELATED-LEFT-LINK'],
-        related_left_hed: stories[x]['RELATED-LEFT-HED'],
-        related_left_byline: stories[x]['RELATED-LEFT-BYLINE'],
-        related_left_date: stories[x]['RELATED-LEFT-DATE'],
-        related_right_link: stories[x]['RELATED-RIGHT-LINK'],
-        related_right_hed: stories[x]['RELATED-RIGHT-HED'],
-        related_right_byline: stories[x]['RELATED-RIGHT-BYLINE'],
-        related_right_date: stories[x]['RELATED-RIGHT-DATE']
-      }
-      // formatted.push(context);
-
-      //create the directory if not already created
-      var dir = './dist/'+context.section+'/'+context.slug;
-      mkdirp.sync(dir, function (err) {
-        if (err) console.error(err)
-        else console.log('pow!')
-      });
-
-      //create an html file in the directory
-      var fileName = './dist/'+context.section+'/'+context.slug+'/index.html';
-      var stream = fs.createWriteStream(fileName);
-      if (context.media_type == 'photo'){
-        var imgResult = imgTemplate(context);
-        var prettifiedImgResult = prettifyHtml(imgResult);
-        stream.write(prettifiedImgResult);
-        stream.end();
-      }
-      else if (context.media_type == 'video'){
-        var vidResult = vidTemplate(context);
-        var prettifiedVidResult = prettifyHtml(vidResult);
-        stream.write(prettifiedVidResult);
-        stream.end();
-      }
-    }
-  }
+generateArticles()

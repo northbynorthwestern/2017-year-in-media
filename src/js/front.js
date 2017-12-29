@@ -19,7 +19,7 @@ var style = require('./style.js')
 function generateBody(){
   var storyWindowTemplate =
     // '{{#each sections}}'+
-      '<div class="window" id="{{index}}" style="position: absolute; left: {{xyPos}}, top: {{xyPos}}">'+
+      '<div class="window" id="{{index}}" style="left: {{xyPos}}, top: {{xyPos}}">'+
         '<div class="title-bar">'+
           '<div class="close-button"></div>'+
           '<div class="title-bar-name"><a href="{{link}}">{{hed}}</a></div>'+
@@ -29,7 +29,7 @@ function generateBody(){
           '<p id="article-auth">By {{author}}</p>'+
           '<p id="article-link"><a href={{link}}>Go >></a></p>'+
         '</div>'+
-      '</div>'+
+      '</div>'
     // '{{/sections}}'
 
   console.log("yo")
