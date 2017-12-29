@@ -60,7 +60,7 @@ function generateArticles(){
             "<header class='article-meta'>"+
                 "<div class='headline'>"+
                     "<h1 class='hed'>{{hed}}</h1>"+
-                		"<h3 class='byline'>By <a href='{{byline_url}}' target='_blank'>{{author}}</h3>"+
+                		"<h3 class='byline'>By <a href='{{authorlink}}' target='_blank'>{{author}}</h3>"+
                 "</div>"+
             "</header>"+
 
@@ -96,6 +96,7 @@ function generateArticles(){
       hed: stories[x]['hed'],
       slug: stories[x]['slug'],
       author: stories[x]['author'],
+      authorlink: stories[x]['author-link'],
       lead: stories[x]['lead'],
       story: stories[x]['story'],
       link: 'http://apps.northbynorthwestern.com/year-in-media/2017/' + stories[x]['slug'],

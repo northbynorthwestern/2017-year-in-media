@@ -756,106 +756,13 @@ article section h3{
 }
 
 
-/* related articles, if any */
-
-
-footer.related-articles{
-    clear: both;
-    border-top: 3px solid #D1D2D4;
-    background: none;
-    color: rgb(34, 34, 34);
-    width: 90%;
-    max-width: 900px;
-    height: fit-content;
-    margin: 20px auto;
-}
-
-.related-articles-row{
-    display: flex;
-    flex-flow: row wrap;
-    background: none;
-    color: rgb(69, 69, 69);
-    height: 100%;
-    width: 100%;
-}
-
-.related-article-item{
-    color: rgb(68, 68, 68);
-    text-align: center;
-    margin: 5px;
-    width: 40%;
-    padding: 20px;
-    flex: 1;
-}
-
-.related-article-item:hover{
-    text-decoration: underline;
-}
-
-.related-article-item+.related-article-item{
-    border-left: 1px solid rgb(74, 74, 74);
-}
-
-.related-article-item h1, .related-article-item h2, .related-article-item p{
-    font-family: "Open Sans", sans-serif;
-    margin: 5px auto;
-}
-.related-article-item h1{
-    margin: 0;
-    font-weight: 700;
-    font-size: 1.1em;
-}
-.related-article-item h2.deck{
-    font-weight: 200;
-    font-size: 1em;
-    width: 80%;
-    margin: 10px auto;
-}
-.related-article-item p.byline{
-    font-weight: 400;
-}
-.related-article-item .origin{
-    font-size: 0.85em;
-    padding-top: 5px;
-}
-
-.related-total-2 .related-article-item{
-    width: 50%;
-    min-width: 300px;
-    flex-grow: 1;
-}
-
-@media screen and (max-width: 750px){
-    .related-articles{
-        text-align: center;
-    }
-    .related-articles-row{
-        flex-flow: wrap column;
-        align-items: center;
-    }
-    .related-total-2 .related-article-item{
-        width: 100%;
-        min-width: 0;
-        min-height: 0;
-        height: 100%;
-    }
-    .related-article-item h1{
-        font-size: 1.5em;
-    }
-    .related-article-item+.related-article-item{
-        border-left: none;
-        border-top: 1px solid rgb(74, 74, 74);
-    }
-}
-
-
-
 /* footer with my name in it */
 
 .nbn-footer{
     clear: both;
     margin-top: 20px;
     font-size: 0.9em;
+    background-color: #FEAFA4;
 }
 
 .nbn-footer.purple{
