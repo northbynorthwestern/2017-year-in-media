@@ -216,7 +216,7 @@ h2.dek{
   display: block;
   color: rgba(0, 0, 0, 0.5);
   position: relative;
-  text-decoration: none;
+  text-decoration: underline;
 }
 .snip1189 a:before,
 .snip1189 a:after {
@@ -342,7 +342,7 @@ h5.image-credit a {
 }
 
 h5.image-credit a:hover {
-    text-decoration: none;
+    text-decoration: underline;
     color: #50a6ff;
 }
 
@@ -906,7 +906,7 @@ footer.related-articles{
 
 .nbn-footer .producer {
     font-weight: bold;
-    text-decoration: none;
+    text-decoration: underline;
 }
 .nbn-footer .producer:hover{
     text-decoration: underline;
@@ -995,7 +995,7 @@ footer.related-articles{
   display: block;
   color: rgba(0, 0, 0, 0.5);
   position: relative;
-  text-decoration: none;
+  text-decoration: underline;
 }
 .snip1189 a:before,
 .snip1189 a:after {
