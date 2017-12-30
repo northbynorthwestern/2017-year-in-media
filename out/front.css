@@ -28,18 +28,26 @@ body {
 }
 
 header {
-	padding: 0.5em;
-	height: 2.25em;
+	padding-left: 0.25em;
+	height: 1.5em;
   /*background-color: #37235E;*/
-	background-color: rgba(0, 0, 0, .5);
-	display: block;
+	background-color: var(--white);
+  border-top-left-radius: 10px;
+border-top-right-radius: 10px;
+
+	display: flex;
 	width: 100%;
 	margin: 0 auto;
   margin-bottom: 10px;
 }
 
+header > p {
+  padding-left: 10px;
+  font-weight: bold;
+}
+
 #logo {
-	width: 2.25em;
+	width: 1.5em;
 }
 
 h1 {
