@@ -78,7 +78,7 @@ function generateArticles(){
 				"</div>"+
 				"<div class='footer-item footer-center footer-links'>"+
 				    "<a data-scroll data-options='{'updateURL': false}' href='#top'>Back to top</a>"+
-				    "<a href='../../index.html'> &laquo; Back to Year in Media </a>"+
+				    "<br><a href='../../index.html'> &laquo; Back to Year in Media </a>"+
 				"</div>"+
 				"<div class='footer-item footer-right'>"+
 				    "<p>&copy; North by Northwestern, December 30, 2017.</p> <p>All rights reserved.</p>"+
