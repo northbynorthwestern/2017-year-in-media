@@ -44,13 +44,6 @@ h1 {
     }
 }
 
-.articlebody {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
 figure{
     text-align: center;
 }
@@ -365,7 +358,6 @@ h5.image-credit a:hover {
 
 main article header.article-meta{
     position: relative;
-    height: 400px;
 }
 
 main article header.article-meta>.photo-byline{
@@ -743,7 +735,6 @@ article header.article-meta{
     margin-bottom: 30px;
     padding-top: 200px;
     padding-bottom: 30px;
-    height: 400px
 }
 
 @media screen and (max-width 800px) {
