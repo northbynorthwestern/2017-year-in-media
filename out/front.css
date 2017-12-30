@@ -85,6 +85,10 @@ h1 {
   box-shadow: 1px 1px 0px 1px var(--black);
 }
 
+.front {
+   z-index: 100;
+}
+
 @media screen and (max-width: 699px) {
   .window {
     position: relative;
@@ -165,10 +169,5 @@ a:hover {
    margin-left: 212.5px;
   }
   #article-link > a{
-    padding-left: 5px;;
-   }		   }
- }
-
- .front{
-    z-index:100;
-}
+    padding-left: 5px;
+  }
