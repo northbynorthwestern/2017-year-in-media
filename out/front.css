@@ -64,6 +64,15 @@ h1 {
  margin-top: 0;
 }
 
+@media screen and (max-width: 699px) {
+  #center-windows {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
 .window {
   position: absolute;
   width: var(--window-width);
@@ -73,6 +82,15 @@ h1 {
   background-color: var(--white);
   box-shadow: 1px 1px 0px 1px var(--black);
 }
+
+@media screen and (max-width: 699px) {
+  .window {
+    position: relative;
+    margin-left: 0;
+    margin-top: 5px;
+  }
+}
+
 .title-bar {
   background-size: var(--title-bg-size);
   background-color: var(--pink);
@@ -89,6 +107,13 @@ h1 {
   border: solid 1px var(--black);
   background-color: var(--white);
 }
+
+@media screen and (max-width: 699px) {
+  .close-button {
+    display: none;
+  }
+}
+
 .title-bar-name {
   display: inline-block;
   padding-left: 10px;
