@@ -4,6 +4,11 @@
 @import url("http://apps.northbynorthwestern.com/hungry/styles/22738433.main.css");
 @import url('https://fonts.googleapis.com/css?family=Space+Mono');
 
+
+/*fun cursors*/
+html { cursor: url(http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2017/12/29/yim-cursor.png), auto; }
+a { cursor: url(http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2017/12/29/cursor-hover-yim.png), auto;}
+
 /*Set default font*/
 html, body, h2, h3, h4, h5, h6, p{
     font-family: "PT Sans", sans-serif;
@@ -211,7 +216,7 @@ h2.dek{
   display: block;
   color: rgba(0, 0, 0, 0.5);
   position: relative;
-  text-decoration: underline;
+  text-decoration: none;
 }
 .snip1189 a:before,
 .snip1189 a:after {
@@ -337,7 +342,7 @@ h5.image-credit a {
 }
 
 h5.image-credit a:hover {
-    text-decoration: underline;
+    text-decoration: none;
     color: #50a6ff;
 }
 
@@ -901,7 +906,7 @@ footer.related-articles{
 
 .nbn-footer .producer {
     font-weight: bold;
-    text-decoration: underline;
+    text-decoration: none;
 }
 .nbn-footer .producer:hover{
     text-decoration: underline;
@@ -990,7 +995,7 @@ footer.related-articles{
   display: block;
   color: rgba(0, 0, 0, 0.5);
   position: relative;
-  text-decoration: underline;
+  text-decoration: none;
 }
 .snip1189 a:before,
 .snip1189 a:after {
