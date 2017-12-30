@@ -26,7 +26,7 @@ function generateBody(){
       '<div class="window-content">'+
         '<p id="article-deck">{{{lead}}}</p>'+
         '<p id="article-auth">By {{author}}</p>'+
-        '<p id="article-link"><a href={{link}}>Go >></a></p>'+
+        '<p id="article-link" style="align:center;"><a href={{link}}>Go >></a></p>'+
       '</div>'+
     '</div>'
 

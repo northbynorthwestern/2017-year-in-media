@@ -6,6 +6,8 @@
   --white: #FFF;
   --pink: #ffbcc1;
   --blue: #86d0d0;
+  --light-blue: #d9eeee;
+  --dark-blue: #317f7f;
   --border-width: 1px;
   --window-width: 300px;
   --window-height: 200px;
@@ -119,7 +121,21 @@ h1 {
 
  #article-link {
    font-size: 16px;
+   background: var(--blue);
+
+  /*border-right: 2px inset var(--dark-blue);
+  border-bottom: 2px inset var(--dark-blue);*/
+  border: solid var(--border-width) var(--black);
+  border-radius: 3px;
+  background-color: var(--white);
+  box-shadow: 0.5px 0.5px 0px 0.5px var(--black);
+  width: 50px;
+  margin-left: 212.5px;
  }
+ #article-link > a{
+   padding-left: 5px;;
+ }
+
 
  .front{
     z-index:100;
