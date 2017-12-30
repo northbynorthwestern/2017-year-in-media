@@ -4,6 +4,11 @@
 @import url("http://apps.northbynorthwestern.com/hungry/styles/22738433.main.css");
 @import url('https://fonts.googleapis.com/css?family=Space+Mono');
 
+
+/*fun cursors*/
+html { cursor: url(http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2017/12/29/yim-cursor.png), auto; }
+a { cursor: url(http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2017/12/29/cursor-hover-yim.png), auto;}
+
 /*Set default font*/
 html, body, h2, h3, h4, h5, h6, p{
     font-family: "PT Sans", sans-serif;
