@@ -119,9 +119,9 @@ a:hover {
   font-weight: bold;
 }
 
- #article-title, #article-deck, #article-auth {
+ /*#article-title, #article-deck, #article-auth {
    text-decoration: underline;
- }
+ }*/
 
  #article-deck, #article-auth {
    font-size: 11px;
