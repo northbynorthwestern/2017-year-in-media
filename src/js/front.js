@@ -8,7 +8,6 @@ var prettifyHtml = require('prettify-html');
 /*
 Load Handlebars partials
 var storyWindowTemplate = require("./../templates/partials/event-window.hbs");
-
 set up DOM Elements
 var entryTemplateDOM = document.querySelector("entry-template")
 */
