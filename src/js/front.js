@@ -19,13 +19,13 @@ var main = require('./main.js');
 
 function generateBody(){
   var storyWindowTemplate =
-    '<div class="window" draggable="true" id="{{index}}" style="margin-left: {{marginLeft}}px; margin-top: {{marginTop}}px">'+
+    '<div class="window" id="{{index}}" style="margin-left: {{marginLeft}}px; margin-top: {{marginTop}}px">'+
       '<div class="title-bar">'+
         '<div class="close-button"></div>'+
         '<div class="title-bar-name"><a href="{{link}}">{{{hed}}}</a></div>'+
       '</div>'+
       '<div class="window-content">'+
-        '<p id="article-deck">{{{lead}}}</p>'+
+        '<p id="article-deck">{{lead}}</p>'+
         '<p id="article-auth">By {{author}}</p>'+
         '<p id="article-link"><a href={{link}}>Go >></a></p>'+
       '</div>'+
@@ -42,12 +42,11 @@ function generateBody(){
       else console.log('pow!')
   });
   const fileName = './out/index.html';
-  var options = { flags: 'r+', start: 5000 }
+  var options = { flags: 'r+', start: 4000 }
   var stream = fs.createWriteStream(fileName, options);
 
   var stories = copy.stories
 
-  // would love to make the left and top margins relative to the size of the window
   // var h = $(window).height();
   // var w = $(window).width();
 
@@ -58,14 +57,17 @@ function generateBody(){
       author: stories[x]['author'],
       lead: stories[x]['lead'],
       story: stories[x]['story'],
-      link: 'http://apps.northbynorthwestern.com/year-in-media/2017/' + stories[x]['slug'] + '/index.html',
+      link: 'http://apps.northbynorthwestern.com/year-in-media/2017/' + stories[x]['slug'],
       index: x+1,
-      marginLeft: Math.random()*700,
-      marginTop: Math.random()*500
+      marginLeft: Math.random()*1000,
+      marginTop: Math.random()*1000
     }
+
+		// var storywindow = prettifyHtml(storytemp(context));
     var storywindow = storytemp(context);
     var storywin = prettifyHtml(storywindow);
 		stream.write(storywin);
+		// stream.end();
   }
   stream.end();
 }

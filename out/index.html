@@ -65,6 +65,11 @@
       <script>
         $( function() {
           $( ".window" ).draggable();
+
+          $('.window').mousedown(function(){
+            $('.front').removeClass('front');
+            $(this).addClass('front');
+          });
         } );
       </script>
 
@@ -77,6 +82,8 @@
    				src="http://nbn-housing.s3.amazonaws.com/static/img/nbn-logo.png">
    			</a>
    		</header>
+      <h1>YEAR IN MEDIA 2017</h1>
+
       <div id="center-windows">
 <div class="window" id="1" style="position: absolute; left: 50, top: 50">
   <div class="title-bar">
