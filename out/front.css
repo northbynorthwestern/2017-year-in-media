@@ -38,8 +38,8 @@ header {
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 
-	display: flex;
-
+	display: -webkit-flex;
+  display: flex;
 	width: 100%;
 	margin: 0 auto;
   margin-bottom: 10px;
@@ -68,9 +68,9 @@ h1 {
 
 @media screen and (max-width: 699px) {
   #center-windows {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    display: -webkit-flex;
+    -webkit-flex-direction: row;
+    -webkit-flex-wrap: wrap;
     justify-content: center;
   }
 }
@@ -100,11 +100,12 @@ h1 {
 .title-bar {
   background-size: var(--title-bg-size);
   background-color: var(--pink);
+  display: -webkit-flex;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.close-button {
+/*.close-button {
   width: 14px;
   height: 14px;
   margin-top: 0.5px;
@@ -112,7 +113,7 @@ h1 {
   position: absolute;
   border: solid 1px var(--black);
   background-color: var(--white);
-}
+}*/
 
 @media screen and (max-width: 699px) {
   .close-button {
