@@ -24,6 +24,15 @@ h1 {
   --complement-color: #46616f;
 }
 
+/*body for center styling on all media*/
+.blackboard {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
 /*Set text size for small screens*/
 @media screen and (max-width: 350px){
     h1{
@@ -44,6 +53,7 @@ h1 {
     }
 }
 
+/*Images and videos*/
 figure{
     text-align: center;
 }
@@ -66,6 +76,12 @@ figcaption .photo-byline:before{
     figure figcaption{
         text-align: center;
     }
+}
+
+@media screen and (max-width: 750px){
+  iframe {
+    width: auto;
+  }
 }
 
 main{
@@ -355,9 +371,72 @@ h5.image-credit a:hover {
     margin-bottom: 10px;
 }
 
+/* Article Meta */
+
+article header .headline h1{
+    font-weight: 700;
+    font-size: 4em;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media screen and (max-width: 750px){
+  article header .headline h1{
+    font-size: 3.2em;
+  }
+}
+
+article header .headline h2 {
+    font-weight: 100;
+    font-size: 1.8em;
+    width: 90%;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    }
+
+article header .headline h3{
+    font-size: 1.2em;
+    font-weight: 300;
+}
+
+article header.article-meta{
+    text-align: center;
+    display: block;
+    margin-bottom: 30px;
+    padding-top: 200px;
+    padding-bottom: 30px;
+}
+
+@media screen and (max-width 800px) {
+  article header.article-meta{
+    padding-top: 0;
+    height: 550px;
+  }
+  main article header.article-meta {
+    height: 550px;
+  }
+}
+
+article header.article-meta a{
+    color: inherit;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+article h2.author
+article section{
+    border-top: 1px solid black;
+    padding-top: 5px;
+}
+
+article section h3{
+    padding-bottom: 5px;
+}
 
 main article header.article-meta{
     position: relative;
+    height: 500px;
 }
 
 main article header.article-meta>.photo-byline{
@@ -693,7 +772,7 @@ mark {
 }
 
 
-/* notes and clarifications */
+ notes and clarifications
 
 article footer.footnote{
     font-style: italic;
@@ -703,63 +782,6 @@ article footer.footnote{
     width: 100%;
     height: 100%;
 }
-
-
-
-/* Article Meta */
-
-article header .headline h1{
-    font-weight: 700;
-    font-size: 4em;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
-}
-article header .headline h2 {
-    font-weight: 100;
-    font-size: 1.8em;
-    width: 90%;
-    margin-top: 30px;
-    margin-left: auto;
-    margin-right: auto;
-    }
-
-article header .headline h3{
-    font-size: 1.2em;
-    font-weight: 300;
-}
-
-article header.article-meta{
-    text-align: center;
-    display: block;
-    margin-bottom: 30px;
-    padding-top: 200px;
-    padding-bottom: 30px;
-}
-
-@media screen and (max-width 800px) {
-  article header.article-meta{
-    padding-top: 0;
-  }
-}
-
-article header.article-meta a{
-    color: inherit;
-    text-decoration: underline;
-    font-weight: bold;
-}
-
-
-article h2.author
-article section{
-    border-top: 1px solid black;
-    padding-top: 5px;
-}
-
-article section h3{
-    padding-bottom: 5px;
-}
-
 
 /* related articles, if any */
 
