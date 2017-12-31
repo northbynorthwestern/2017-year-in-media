@@ -5,10 +5,6 @@
 @import url('https://fonts.googleapis.com/css?family=Space+Mono');
 
 
-.front {
-   z-index: 100;
-}
-
 /*fun cursors*/
 html { cursor: url(http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2017/12/29/yim-cursor.png), auto; }
 a { cursor: url(http://media.northbynorthwestern.com.s3.amazonaws.com/uploads/2017/12/29/cursor-hover-yim.png), auto;}
