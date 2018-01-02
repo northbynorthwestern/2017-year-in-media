@@ -83,7 +83,7 @@ h1 {
 }
 
 .front {
-   z-index: 100;
+   z-index: 1000;
 }
 
 @media screen and (max-width: 699px) {
