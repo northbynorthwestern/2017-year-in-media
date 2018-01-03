@@ -1,4 +1,4 @@
-# 2018-year-in-media
+# 2017-year-in-media
 
 Some notes on the build:
 1. we opted for `yarn` instead of `npm`
