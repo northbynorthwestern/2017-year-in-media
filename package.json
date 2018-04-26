@@ -14,18 +14,19 @@
   "license": "ISC",
   "devDependencies": {
     "handlebars": "^4.0.11",
-    "handlebars-loader": "^1.6.0",
-    "webpack": "^3.10.0"
+    "handlebars-loader": "^1.7.0",
+    "webpack": "^3.11.0"
   },
   "dependencies": {
     "archieml": "^0.4.2",
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
+    "babel-core": "^6.26.2",
+    "babel-loader": "^7.1.4",
     "dotenv": "^4.0.0",
     "googledoc-to-json": "^0.4.1",
+    "hoek": "^5.0.3",
     "json-loader": "^0.5.7",
     "mkdirp": "^0.5.1",
-    "node": "^9.3.0",
+    "node": "^9.11.0",
     "prettify-html": "^0.0.2"
   }
 }
